@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 const path = require('path');
 var fs = require('fs');
+const wsh = require('./ws/handler');
 
-
-global.all_cards = JSON.parse(fs.readFileSync('AllIdentifiers.json', 'utf8'));
+//global.all_cards = JSON.parse(fs.readFileSync('AllIdentifiers.json', 'utf8'));
 
 mongoose.connect('mongodb://localhost/deckollab', {
 	useNewUrlParser: true,
@@ -13,6 +13,8 @@ mongoose.connect('mongodb://localhost/deckollab', {
 
 var express = require('express');
 var app = express();
+
+
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -29,5 +31,6 @@ app.use('/api/card_selector', require('./api/card_selector'));
 
 app.locals.basedir = path.join(__dirname, '.');
 
-app.listen(port);
+const server = app.listen(port);
+server.on('upgrade', wsh.upgrade_handler);
 console.log('LISTENING ON ' + port);

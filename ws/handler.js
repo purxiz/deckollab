@@ -3,7 +3,7 @@ const url = require('url');
 const wss = new WebSocket.Server({ noServer: true });
 const { v4: uuidv4 } = require('uuid');
 
-var lobbies = {}
+var lobbies = {};
 
 wss.on('connection', function(ws, req) {
 	ws.id = uuidv4();

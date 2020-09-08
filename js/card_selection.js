@@ -5,5 +5,9 @@ $('#card_selector').on('keyup paste', (event) => {
 		data: {
 			string: event.target.value
 		}
+	})
+	.then( (response) => {
+		console.log(response);
+		//TODO: populate list of cards based on response
 	});
 });

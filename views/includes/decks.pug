@@ -1,0 +1,6 @@
+div.decks(style="display:flex")
+	each deck in decks
+		a(href=deck.hyperlink) deck.name
+	else
+		p
+			| There are no decks to display lmao

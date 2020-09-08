@@ -1,0 +1,17 @@
+{
+  "name": "deckollab",
+  "version": "1.0.0",
+  "description": "A magic the gathering deck collab tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "purxiz",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.3",
+    "pug": "^3.0.0"
+  }
+}

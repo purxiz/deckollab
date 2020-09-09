@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/deckollab', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
+	useFindAndModify: false,
 });
 
 var express = require('express');

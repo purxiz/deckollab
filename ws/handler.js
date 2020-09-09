@@ -11,6 +11,7 @@ wss.on('connection', function(ws, req) {
 		lobbies[ws.pathname] = {};
 	}
 	lobbies[ws.pathname][ws.id] = ws;
+	console.log(lobbies);
 });
 
 const handler = (request, socket, head) => {

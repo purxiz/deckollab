@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');
+const all_cards = require('../scripts/all_cards.js');
 
-const all_cards = JSON.parse(fs.readFileSync('AtomicCards.json', 'utf8'));
 router.route('/')
 	.get( (req, res) => {
 		returnable = [];
 		for (card in all_cards.data) {
+			//TODO: fix when json format is better
 			if (all_cards.data[card][0].name.toLowerCase().includes(req.query.string.toLowerCase())) {
-				returnable.push(all_cards.data[card]);
+				let card_to_return = all_cards.data[card][0];
+				returnable.push({ card: card_to_return, uuid: card });
 			}
 		}
 		res.json({

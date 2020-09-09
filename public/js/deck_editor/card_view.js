@@ -1,13 +1,6 @@
 import { sort } from '../utils/sort.js';
 
-var update_deck = ( card, cards, action) => {
-	if(card.constructor === Array) {
-		cards.concat(card);
-	}
-	else cards.push(card);
-
-	let sorted_cards = sort(cards, 'cmc');
-
+var update_display = ( sorted_cards ) => {
 	$('#maindeck').empty();
 	
 	sorted_cards.labels.forEach( (label) => {
@@ -27,6 +20,18 @@ var update_deck = ( card, cards, action) => {
 		});
 
 	});
+};
+
+var update_deck = ( card, cards, action) => {
+	if(card.constructor === Array) {
+		cards = card;
+	}
+	else cards.push(card);
+
+	let sorted_cards = sort(cards, 'cmc');
+
+	update_display(sorted_cards);
+
 };
 
 export { update_deck }

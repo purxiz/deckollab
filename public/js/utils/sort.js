@@ -22,7 +22,9 @@ var get_sorted_labels = ( bins, sort_type ) => {
 var deep_alphabetize = ( bins ) => {
 	for(let bin in bins) {
 		if(bins[bin].constructor === Array) {
-			bins[bin].sort();
+			bins[bin] = bins[bin].sort( ( a, b ) => {
+				return a.name <= b.name ? -1 : 1;
+			});
 		}
 		else {
 			deep_alphabetize(bins[bin]);

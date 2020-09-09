@@ -14,10 +14,12 @@ var add_input_listener = (id, update_deck, cards) => {
 			if(response.length < $('#card_selector').val().length) return;
 			$('#card_list').empty();
 			response.data.forEach( (card) => {
+				//TODO: fix when json format is better
+				card.card.uuid = card.uuid;
 				$('#card_list')
 				.append(
-					$('<div>').html(card[0].name).addClass('list_item').click( (event) => {
-						update_deck(card[0], cards);
+					$('<div>').html(card.card.name).addClass('list_item').click( (event) => {
+						update_deck(card.card, cards);
 					})
 				);
 			});

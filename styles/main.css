@@ -69,6 +69,7 @@
 	width: 100%;
 	cursor: pointer;
 	user-select: none;
+	height: min-content;
 }
 
 .list_item:hover {

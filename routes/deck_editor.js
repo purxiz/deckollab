@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Deck = require('../models/deck');
+const all_cards = require('../scripts/all_cards.js');
 
 router.route('/')
 	.get( (req, res) => {
@@ -17,8 +18,12 @@ router.route('/:deck_id')
 	.get ( (req, res) => {
 		Deck.findOne({url: req.params.deck_id})
 		.exec( (err, docs) => {
-			//TODO: change card UUID into card object
-			res.render('deck_editor', cards=docs.cards);
+			//TODO: change card UUID into card object (fix when json format is better)
+			let deck_list = [];
+			docs.cards.forEach( (card) => {
+				deck_list.push({ uuid: card.uuid, card: all_cards.data[card.uuid][0] });
+			});
+			res.render('deck_editor', cards=deck_list);
 			if(docs === null || docs === undefined) {
 				res.render('four-oh-four');
 			}

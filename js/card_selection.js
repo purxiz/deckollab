@@ -1,5 +1,5 @@
 $('#card_selector').on('keyup paste', (event) => {
-	if (event.target.value.length < 3) {
+	if (event.target.value.length < 4) {
 		$('#card_list').empty();
 		return;
 	}
@@ -10,10 +10,15 @@ $('#card_selector').on('keyup paste', (event) => {
 		}
 	})
 	.then( (response) => {
+		if(response.length < $('#card_selector').val().length) return;
 		$('#card_list').empty();
-		response.forEach( (card) => {
-			console.log(card);
-			$('#card_list').append($('<div>').html(card[0].name));
+		response.data.forEach( (card) => {
+			$('#card_list')
+			.append(
+				$('<div>').html(card[0].name).css('width', '100%').click( (event) => {
+					updateCardDisplay(card[0]);
+				})
+			);
 		});
 	});
 });

@@ -4,9 +4,9 @@ html
 		style
 			include ../styles/main.css
 		include includes/head.pug
-	body
+	body(style='font-family:courier;')
 		div(style='width:80%;margin:auto;')
 			include includes/header.pug
-			div(style='display:grid;grid-template-columns:minmax(150px,25%)1fr;')
+			div(style='display:grid;grid-template-columns:minmax(150px,25%)1fr;height:calc(100vh - 110px);')
 				include deck_editor/card_selector.pug
 				include deck_editor/deckview.pug

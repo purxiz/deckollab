@@ -11,7 +11,10 @@ router.route('/')
 				returnable.push(all_cards.data[card]);
 			}
 		}
-		res.json(returnable);
+		res.json({
+			data: returnable,
+			length: req.query.string.length,
+		});
 	});
 
 module.exports = router;

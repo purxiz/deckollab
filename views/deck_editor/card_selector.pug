@@ -1,5 +1,5 @@
 div(style='border:thick double;')
 	input(type='text',placeholder='Card Search...',id='card_selector',style='border:none;width:100%;font-size:2em;')
-	div(style='border-top: thick double;min-height:calc(100vh - 150px);display:flex;')
+	div#card_list(style='border-top: thick double;min-height:calc(100vh - 150px);display:flex;flex-wrap: wrap;')
 script
 	include /js/card_selection.js

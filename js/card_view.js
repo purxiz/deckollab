@@ -2,14 +2,10 @@ var cards = [];
 
 var cmc_sort = ( card ) => {
 	if(card.convertedManaCost < 8) return card.convertedManaCost.toString();
-	else return '11';
+	else return '8+';
 };
 
-var cmc_sort_labels = (a, b) => {
-	return parseInt(a) - parseInt(b);
-};
-
-var sort = (cards, sortIntoLabel, labelOrder) => {
+var sort = (cards, sortIntoLabel) => {
 	var labels = {};
 	cards.forEach( (card) => {
 		let label = sortIntoLabel(card);
@@ -18,7 +14,6 @@ var sort = (cards, sortIntoLabel, labelOrder) => {
 		}
 		labels[label].push(card);
 	});
-	//labels.sort( labelOrder );
 	return labels;
 };
 
@@ -26,7 +21,7 @@ var initCardDisplay = ( card ) => {
 	if(card.constructor === Array) cards.concat(card);
 	else cards.push(card);
 
-	let sorted_cards = sort(cards, cmc_sort, cmc_sort_labels);
+	let sorted_cards = sort(cards, cmc_sort);
 	
 	$('#maindeck').empty();
 	

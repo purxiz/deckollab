@@ -3,7 +3,6 @@ const path = require('path');
 var fs = require('fs');
 const wsh = require('./ws/handler');
 
-//global.all_cards = JSON.parse(fs.readFileSync('AllIdentifiers.json', 'utf8'));
 
 mongoose.connect('mongodb://localhost/deckollab', {
 	useNewUrlParser: true,

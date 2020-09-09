@@ -1,1 +1,55 @@
+#maindeck {
+	display: flex;
+	justify-content: start;
+	padding-left:20px;
+	border-bottom: thick double;
+	border-right: thick double;
+	border-top: thick double;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	overflow: scroll;
+}
+
+.category {
+	display: flex;
+	flex-direction: column;
+	padding: 0 15px 15px;
+	max-width: 21%;
+}
+
+#card_selector {
+	border: none;
+	width: 100%;
+	font-size:2em;
+}
+
+#card_list {
+	border-top: thick double;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	height: calc(100% - 2.8em);
+	overflow: scroll;
+}
+
+.grid_cols {
+	display: grid;
+	grid-template-columns: minmax(150px,25%)1fr;
+	height: calc(100vh - 125px);
+}
+
+.col_left {
+	border: thick double;
+	height: inherit;
+}
+
+.list_item {
+	width: 100%;
+	cursor: pointer;
+	user-select: none;
+}
+
+.list_item:hover {
+	background: #ccc;
+}
 

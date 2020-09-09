@@ -1,5 +1,5 @@
-div(style='border:thick double;')
-	input(type='text',placeholder='Card Search...',id='card_selector',style='border:none;width:100%;font-size:2em;',autocomplete='off')
-	div#card_list(style='border-top: thick double;display:flex;flex-wrap: wrap;align-content:flex-start;overflow:scroll;')
+div.col_left
+	input#card_selector(type='text',placeholder='Card Search...',autocomplete='off')
+	div#card_list
 script
 	include /js/card_selection.js

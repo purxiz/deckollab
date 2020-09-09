@@ -7,6 +7,6 @@ html
 	body(style='font-family:courier;')
 		div(style='width:80%;margin:auto;')
 			include includes/header.pug
-			div(style='display:grid;grid-template-columns:minmax(150px,25%)1fr;height:calc(100vh - 110px);')
+			div.grid_cols
 				include deck_editor/card_selector.pug
 				include deck_editor/deckview.pug

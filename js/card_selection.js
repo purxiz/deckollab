@@ -15,8 +15,8 @@ $('#card_selector').on('keyup paste', (event) => {
 		response.data.forEach( (card) => {
 			$('#card_list')
 			.append(
-				$('<div>').html(card[0].name).css('width', '100%').click( (event) => {
-					updateCardDisplay(card[0]);
+				$('<div>').html(card[0].name).addClass('list_item').click( (event) => {
+					initCardDisplay(card[0]);
 				})
 			);
 		});

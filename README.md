@@ -14,3 +14,7 @@ Deckollab is a [WIP] Collaborative Editor for Magic the Gathering decks
 * ability to delete decks (give creator a custom key?)
 * ability to name decks
 * create view four-oh-four.pug that tells someone they've 404'd
+* add a select to bottom of page that allows you to change the sort
+* add support for secondary sorting
+	* deep_alphabetize handles this already for tertiary sorting
+	* secondary sorting should divide into columnar bins, visually

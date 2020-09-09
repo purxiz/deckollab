@@ -8,7 +8,7 @@ var deckSchema = new Schema({
 	cards: [{
 		uuid: { type: String },
 	}],
-	url: { type: String, required: true },
+	url: { type: String, required: true, unique: true },
 });
 
 deckSchema.pre('save', function (next) {

@@ -15,7 +15,15 @@ router.route('/')
 
 router.route('/:deck_id')
 	.get ( (req, res) => {
-		res.render('deck_editor', cards=[]);
+		Deck.findOne({url: req.params.deck_id})
+		.exec( (err, docs) => {
+			//TODO: change card UUID into card object
+			res.render('deck_editor', cards=docs.cards);
+			if(docs === null || docs === undefined) {
+				res.render('four-oh-four');
+			}
+		});
+		
 	});
 
 module.exports = router;

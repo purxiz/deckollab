@@ -7,14 +7,36 @@
 	border-top: thick double;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
-.category {
-	display: flex;
-	flex-direction: column;
-	padding: 0 15px 15px;
-	max-width: 21%;
+#mainbody {
+	width: 80%;
+	margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+	#mainbody {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.category {
+		display: flex;
+		flex-direction: column;
+		padding: 0 15px 15px;
+		max-width: 51%;
+	}
+}
+@media screen and (min-width: 801px) {
+	.category {
+		display: flex;
+		flex-direction: column;
+		padding: 0 15px 15px;
+		max-width: 21%;
+		min-width: 0;
+	}
 }
 
 #card_selector {
@@ -29,7 +51,7 @@
 	flex-wrap: wrap;
 	align-content: flex-start;
 	height: calc(100% - 2.8em);
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .grid_cols {

@@ -4,8 +4,9 @@ html
 		style
 			include ../styles/main.css
 		include includes/head.pug
+		script(type = "module", src="/js/deck_editor.js")
 	body(style='font-family:courier;')
-		div(style='width:80%;margin:auto;')
+		div#mainbody
 			include includes/header.pug
 			div.grid_cols
 				include deck_editor/card_selector.pug

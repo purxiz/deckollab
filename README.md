@@ -13,3 +13,4 @@ Deckollab is a [WIP] Collaborative Editor for Magic the Gathering decks
 	* search option for this
 * ability to delete decks (give creator a custom key?)
 * ability to name decks
+* create view four-oh-four.pug that tells someone they've 404'd

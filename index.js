@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 const path = require('path');
 var fs = require('fs');
+const favicon = require('serve-favicon');
 const wsh = require('./ws/handler');
 
 
@@ -14,6 +15,9 @@ mongoose.connect('mongodb://localhost/deckollab', {
 var express = require('express');
 var app = express();
 
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
+
+app.use(express.static('public'));
 
 var bodyParser = require('body-parser');
 

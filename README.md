@@ -7,7 +7,7 @@ Deckollab is a [WIP] Collaborative Editor for Magic the Gathering decks
 	* initially just name search - DONE 
 * add card to deck and send event - card adding done, need to send event still
 * remove card from deck and send event
-* websocket send to all in lobby
+* websocket send to all in lobby - DONE
 * unique IDs for decks - DONE - would like to make prettier IDs
 * deck list front page
 	* search option for this

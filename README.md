@@ -8,6 +8,7 @@ Deckollab is a [WIP] Collaborative Editor for Magic the Gathering decks
 #### Prerequisites: 
 * Node-js
 * npm
+* MongoDB server running on your machine
 #### Installation
 1. Clone the repository to a destination of your choice. 
 2. download AtomicCards.json from mtgjson and place it in the root directory of your project.

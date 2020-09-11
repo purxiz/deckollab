@@ -6,13 +6,13 @@ var add_card = ( card ) => {
 		action: 'add',
 		card: card
 	};
-	ws.send(message);
+	ws.send( message );
 };
 
 var add_message_listener = ( cards ) => {
 	ws.on_message( ( message ) => {
-		update_deck(message, cards);
-	});
+		update_deck( message, cards );
+	} );
 };
 
-export { add_card, add_message_listener }
+export { add_card, add_message_listener };

@@ -2,7 +2,8 @@ module.exports = {
 	'env': {
 		'browser': true,
 		'es2021': true,
-		'node': true
+		'node': true,
+		'jquery': true,
 	},
 	'extends': [
 		'eslint:recommended',
@@ -21,7 +22,8 @@ module.exports = {
 	'rules': {
 		'indent': [
 			'error',
-			'tab'
+			'tab',
+			{ 'MemberExpression': 'off' },
 		],
 		'linebreak-style': [
 			'error',
@@ -32,6 +34,14 @@ module.exports = {
 			'single'
 		],
 		'semi': [
+			'error',
+			'always'
+		],
+		'arrow-parens': [
+			'error',
+			'always'
+		],
+		'space-in-parens': [
 			'error',
 			'always'
 		]

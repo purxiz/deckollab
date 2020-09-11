@@ -9,6 +9,12 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:react/recommended'
 	],
+	'settings': {
+		'react': {
+			'pragma': 'React',
+			'version': 'detect'
+		},
+	},
 	'parserOptions': {
 		'ecmaFeatures': {
 			'jsx': true

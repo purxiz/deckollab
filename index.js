@@ -35,7 +35,7 @@ app.use( '/deck_editor', require( './routes/deck_editor' ) );
 app.use( '/api/card_selector', require( './api/card_selector' ) );
 
 // 404 page on bad url response, keep at end of page.
-app.use( function ( req, res, next ) {
+app.use( function ( req, res ) {
 	res.status( 404 );
 	// respond with html page
 	if ( req.accepts( 'html' ) ) {

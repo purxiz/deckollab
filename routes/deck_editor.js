@@ -9,10 +9,9 @@ router.route( '/' )
 			url: 'hi',
 			test: 'bob',
 		} );
-		decko.save().then( ( doc, err ) => {
+		decko.save().then( ( doc ) => {
 			//TODO: create a more generic error page
-			if( err ) return res.redirect( '/404' );
-			res.redirect( '/deck_editor/' + doc.url );
+			res.json( { url: doc.url } );
 		} );
 	} );
 
@@ -24,12 +23,9 @@ router.route( '/:deck_id' )
 				//TODO: change card UUID into card object (fix when json format is better)
 				let deck_list = [];
 				docs.cards.forEach( ( card ) => {
-					deck_list.push( { uuid: card.uuid, card: all_cards.data[card.uuid][0] } );
+					deck_list.push( all_cards.data[card.uuid][0] );
 				} );
-				res.render( 'deck_editor', { cards: deck_list } );
-				if( docs === null || docs === undefined ) {
-					res.render( 'four-oh-four' );
-				}
+				return res.json( deck_list );
 			} );
 		
 	} );

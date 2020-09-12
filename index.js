@@ -32,7 +32,7 @@ var port = process.env.PORT || 9191;
 
 app.use( '/', require( './routes/default' ) );
 app.use( '/api/deck_editor', require( './routes/deck_editor' ) );
-app.use( '/api/card_selector', require( './api/card_selector' ) );
+app.use( '/api/card_selector', require( './routes/card_selector' ) );
 
 // 404 page on bad url response, keep at end of page.
 app.use( function ( req, res ) {

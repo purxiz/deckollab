@@ -1,13 +1,6 @@
 #maindeck {
-	display: flex;
-	justify-content: start;
-	padding-left:20px;
-	border-bottom: thick double;
-	border-right: thick double;
-	border-top: thick double;
-	flex-wrap: wrap;
-	align-content: flex-start;
-	overflow-y: scroll;
+	border: thick double;
+	border-left: none;
 }
 
 #app {
@@ -61,6 +54,47 @@
 	}
 }
 
+.card_area {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	overflow-y: scroll;
+	border-top: thick double;
+}
+
+.options_bar {
+	display: flex;
+	align-items: baseline;
+	font-size: 1.5em;
+}
+
+.options_bar select{
+	margin-left: 10px;
+	font-size: 1em;
+	border: none;
+	cursor: pointer;
+	background: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.options_bar select:hover {
+	background: #ccc;
+}
+
+
+.category_header {
+	text-align: center;
+}
+
+.sub_category_header {
+	text-align: center;
+	margin: 0 0 0 0;
+}
+
 #card_selector {
 	border: none;
 	width: 99%;
@@ -72,7 +106,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	height: calc(100% - 2.8em);
 	overflow-y: scroll;
 }
 
@@ -82,9 +115,11 @@
 	height: calc(100vh - 125px);
 }
 
-.col_left {
+.col {
 	border: thick double;
 	height: inherit;
+	display: grid;
+	grid-template-rows: 2em 1fr;
 }
 
 .list_item {

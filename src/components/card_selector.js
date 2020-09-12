@@ -25,7 +25,7 @@ class CardSelector extends Component {
 	
 	render() {
 		return (
-			<div className='col_left'>
+			<div className='col'>
 				<input id='card_selector' type='text' placeholder='Card Search...' autoComplete='off' onKeyUp={this.handleKeyUp}/>
 				<div id='card_list'>
 					{ this.state.cards.map( ( card, index ) => (

@@ -10,13 +10,35 @@
 	overflow-y: scroll;
 }
 
-#mainbody {
+#app {
 	width: 80%;
+	margin: auto;
+	font-family: Courier new;
+}
+
+.header {
+	display: flex;
+	background-color: #00cc66;
+	justify-content: space-between;
+	align-items: center;
 	margin: auto;
 }
 
+.logo {
+	padding-left: 15px;
+}
+
+.navlink {
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.navlink:hover {
+	background: #ccc;
+}
+
 @media screen and (max-width: 800px) {
-	#mainbody {
+	#app {
 		width: 100%;
 	}
 }

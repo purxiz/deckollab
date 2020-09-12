@@ -31,7 +31,7 @@ app.set( 'view engine', 'pug' );
 var port = process.env.PORT || 9191;
 
 app.use( '/', require( './routes/default' ) );
-app.use( '/deck_editor', require( './routes/deck_editor' ) );
+app.use( '/api/deck_editor', require( './routes/deck_editor' ) );
 app.use( '/api/card_selector', require( './api/card_selector' ) );
 
 // 404 page on bad url response, keep at end of page.

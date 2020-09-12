@@ -11,8 +11,7 @@ router.route( '/' )
 		} );
 		decko.save().then( ( doc, err ) => {
 			//TODO: create a more generic error page
-			if( err ) return res.redirect( '/404' );
-			res.redirect( '/deck_editor/' + doc.url );
+			res.json( { url: doc.url } );
 		} );
 	} );
 

@@ -9,7 +9,7 @@ router.route( '/' )
 			url: 'hi',
 			test: 'bob',
 		} );
-		decko.save().then( ( doc, err ) => {
+		decko.save().then( ( doc ) => {
 			//TODO: create a more generic error page
 			res.json( { url: doc.url } );
 		} );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -8,19 +8,19 @@ class Header extends Component {
 	}
 
 	new_deck = () => {
-		fetch('/api/deck_editor')
+		fetch( '/api/deck_editor' )
 		.then( ( response ) => {
-			return response.json()
-		})
+			return response.json();
+		} )
 		.then( ( data ) => {
 			this.setState( { redirect: true, url: data.url } );
-		});
+		} );
 	};
 	
 	render() {
-		if(this.state.redirect) {
+		if( this.state.redirect ) {
 			let url = '/deck/' + this.state.url;
-			return <Redirect to={url} />
+			return <Redirect to={url} />;
 		}
 		return (
 			<div className="header">

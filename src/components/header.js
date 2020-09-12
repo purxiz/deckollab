@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
 class Header extends Component {
-
+	
 	state = {
 		redirect: false
 	}

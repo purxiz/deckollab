@@ -23,7 +23,6 @@ router.route( '/:deck_id' )
 				//TODO: change card UUID into card object (fix when json format is better)
 				let deck_list = [];
 				docs.cards.forEach( ( card ) => {
-					console.log( card );
 					deck_list.push( all_cards.data[card.uuid][0] );
 				} );
 				return res.json( deck_list );

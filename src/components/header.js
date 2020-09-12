@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
-	
-	state = {
-		redirect: false
-	}
 
 	new_deck = () => {
 		fetch( '/api/deck_editor' )
@@ -13,15 +10,12 @@ class Header extends Component {
 			return response.json();
 		} )
 		.then( ( data ) => {
-			this.setState( { redirect: true, url: data.url } );
+			console.log( this.props );
+			this.props.history.push( `/deck/${data.url}` );
 		} );
 	};
 	
 	render() {
-		if( this.state.redirect ) {
-			let url = '/deck/' + this.state.url;
-			return <Redirect to={url} />;
-		}
 		return (
 			<div className="header">
 				<h1 className="logo">
@@ -36,5 +30,8 @@ class Header extends Component {
 	}
 }
 
+Header.propTypes = {
+	history: PropTypes.object,
+};
 
-export default Header;
+export default withRouter( Header );

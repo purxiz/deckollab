@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardSelector from '../components/card_selector.js';
 import DeckView from '../components/deck_view.js';
 
@@ -9,7 +10,7 @@ class Deck extends Component {
 	}
 
 	componentDidMount() {
-		fetch(`/api/deck_editor/${this.props.match.params.deck_id}`)
+		fetch( `/api/deck_editor/${this.props.match.params.deck_id}` )
 		.then( ( response ) => response.json() )
 		.then ( ( cards ) => {
 			this.setState( { cards: cards } );
@@ -32,5 +33,9 @@ class Deck extends Component {
 		);
 	}
 }
+
+Deck.propTypes = {
+	match: PropTypes.object, //TODO: more strict validation?
+};
 
 export default Deck;

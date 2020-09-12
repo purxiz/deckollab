@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"node bundler.js\" \"npx nodemon\" --kill-others",
+    "dev": "concurrently \"npx nodemon\" \"node bundler.js\" --kill-others",
     "build": "parcel build index.html",
     "start": "npx nodemon"
   },

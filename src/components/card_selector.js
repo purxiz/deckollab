@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Card from './card.js';
 
 class CardSelector extends Component {
 	state = {
@@ -17,8 +19,8 @@ class CardSelector extends Component {
 		} );
 	};
 
-	handleClick = ( event ) => {
-		console.log(event);
+	handleClick = ( card ) => {
+		this.props.addCards( card );
 	};
 	
 	render() {
@@ -27,12 +29,16 @@ class CardSelector extends Component {
 				<input id='card_selector' type='text' placeholder='Card Search...' autoComplete='off' onKeyUp={this.handleKeyUp}/>
 				<div id='card_list'>
 					{ this.state.cards.map( ( card, index ) => (
-						<div key={index} className='list_item' onClick={this.handleClick}>{ card.name }</div>
+						<Card key={index} onClick={this.handleClick} card={ card } />
 					) ) }
 				</div>
 			</div>
 		);
 	}	
 }
+
+CardSelector.propTypes = {
+	addCards: PropTypes.func.isRequired,
+};
 
 export default CardSelector;

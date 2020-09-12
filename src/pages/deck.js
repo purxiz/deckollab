@@ -7,15 +7,18 @@ class Deck extends Component {
 		cards: []
 	}
 
-	update_deck = ( cards ) => {
-		this.setState( { cards: cards } );
+	add_cards = ( new_cards ) => {
+		if ( !Array.isArray( new_cards ) ) new_cards = [new_cards];
+		this.setState( { cards: [...this.state.cards, ...new_cards] } );
 	}
+
+	
 
 	render () {
 		return (
 			<div className='grid_cols'>
-				<CardSelector />
-				<DeckView />
+				<CardSelector addCards={this.add_cards}/>
+				<DeckView cards={this.state.cards}/>
 			</div>
 		);
 	}
